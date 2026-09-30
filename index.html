@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Form UI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section>
+            <form action="">
+                <label for="name">Full Name</label>
+                <aside>
+                    <input 
+                    type="text" 
+                    id="name"
+                    name="name"
+                    placeholder="What should we call you?"
+                    required
+                    aria-required="true"
+                    aria-describedby="name-error"
+                    >
+                    <span id="name-error" class="error-message">
+                        Please enter your name
+                    </span>
+                </aside>
+                
+                <label for="email">Email</label>
+                <aside>
+                    <input 
+                    type="email" 
+                    id="email"
+                    name="email"
+                    placeholder="johndoe@example.com" 
+                    required 
+                    aria-required="true"
+                    aria-describedby="email-error"
+                    >
+                    <span id="email-error" class="error-message">
+                        Please enter a valid email address
+                    </span>
+                </aside>
+        
+                <label for="password">Enter Password</label>
+                <aside>
+                    <input 
+                    type="password" 
+                    name="password" 
+                    id="password" 
+                    required 
+                    autocomplete="new-password"
+                    aria-required="true" 
+                    aria-label="Password is hidden"
+                    aria-describedby="password-error"
+                    placeholder="xxxxxxxx"
+                    >
+                    <span id="password-error" class="error-message">
+                        Please type a password
+                    </span>
+                    <button type="button" class="toggle"
+                    aria-label="Show password"
+                    aria-pressed="false">&#128065;</button>
+                </aside>
+
+                <label for="confirm-pass">Confirm Password</label>
+                <aside>
+                    <input 
+                    type="password" 
+                    name="confirm-pass" 
+                    id="confirm-pass" 
+                    required 
+                    aria-required="true" 
+                    aria-label="Password is hidden"
+                    aria-describedby="confirm-pass-error"
+                    placeholder="xxxxxxxx"
+                    >
+                    <span id="confirm-pass-error" class="error-message">
+                        Please type previous password
+                    </span>
+                    <button type="button" class="toggle"
+                    aria-label="Show confirm password"
+                    aria-pressed="false">&#128065;</button>
+                </aside>
+                
+                <button class="update-btn">Update Profile</button>
+            </form>
+        </section>
+        
+        <section>
+            <div class="progress">
+                <p class="circular-progress">65%</p>
+                <p>Profile Completeness</p>
+            </div>
+            <div class="list">
+                <p class="crossed">Create Account</p>
+                <p class="crossed">Update Roadmap Progress</p>
+                <p class="crossed">Setup Public Profile</p>
+                <p>Complete your first project</p>
+                <p>Invite your Friends</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

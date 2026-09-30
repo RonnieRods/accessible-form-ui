@@ -1,0 +1,207 @@
+/* CSS RESET BELOW */
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* CSS RESET ABOVE */
+body {
+    display: flex;
+    font-size: 1.1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;   
+    background-color: rgb(201, 192, 180); 
+}
+
+main {
+    padding: 8px 16px;
+    display: flex;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+main section:first-child {
+    flex: 1;
+    padding: 8px 16px;
+}
+
+main section:last-child {
+    flex: 1;
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+form input {
+    width: 195px;
+}
+
+form aside {
+    padding-bottom: 12px;
+    position: relative;
+    max-width: 190px;
+}
+
+input {
+    border: 1px solid black;
+    outline: none;
+    border-radius: 6px;
+    padding-left: 6px;
+}
+
+input:focus {
+    outline: 2px solid black;
+}
+
+.error-message {
+    display: none;
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+form aside input[type=text]:user-invalid,
+form aside input[type=email]:user-invalid,
+form aside input[type=password]:user-invalid {
+    color: red;
+    outline: none;
+    border: 2px solid red;
+}
+
+form aside input[type=text]:user-invalid + .error-message,
+form aside input[type=email]:user-invalid + .error-message,
+form aside input[type=password]:user-invalid + .error-message {
+    display: block;
+}
+
+form aside .toggle {
+    position: absolute;
+    border: none;
+    top: 1px;
+    right: 0;
+    font-size: 1.1rem;
+    background: none;
+    cursor: pointer;
+}
+
+form .update-btn {
+    width: 180px;
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+}
+
+form .update-btn:focus {
+  outline: 3px solid orange;
+}
+
+form .update-btn:hover {
+    background-color: gray;
+}
+
+.progress p {
+    text-align: center;
+}
+
+.circular-progress {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(lightblue 65%, #e0e0e0 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto;
+  color: #333;
+  box-shadow: inset 0 0 0 5px #ffffff;
+}
+
+.list {
+    background-color: rgb(224, 223, 223);
+    padding: 12px 16px 96px 16px;
+    border-radius: 20px;
+}
+
+.list .crossed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    align-items: baseline;
+    margin-top: 16px;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .update-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
